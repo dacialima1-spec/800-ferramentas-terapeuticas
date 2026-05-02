@@ -9,17 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bege:#F5EFE7;
-    --bege-2:#EFE6D9;
-    --marrom:#5A2E1C;
-    --marrom-escuro:#3B1F14;
-    --marrom-mais-escuro:#2A1610;
-    --terracota:#C46A3A;
-    --terracota-2:#E08858;
-    --verde:#2FBF71;
-    --verde-2:#26A862;
-    --linha:rgba(90,46,28,0.18);
-    --linha-clara:rgba(245,239,231,0.14);
+    --bege:#F5EFEA;
+    --bege-2:#EDE4DC;
+    --marrom:#5B524A;
+    --marrom-escuro:#3A3330;
+    --marrom-mais-escuro:#26221F;
+    --terracota:#C47C73;
+    --terracota-2:#E2A39B;
+    --verde:#6F7F5E;
+    --verde-2:#4F5A47;
+    --linha:rgba(91,82,74,0.18);
+    --linha-clara:rgba(245,239,234,0.14);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -80,7 +80,7 @@
   .topbar strong{color:var(--terracota-2);font-weight:600}
   .topbar .timer{
     display:inline-flex;align-items:center;gap:6px;
-    background:rgba(245,239,231,.08);padding:4px 10px;border-radius:4px;
+    background:rgba(245,239,234,.08);padding:4px 10px;border-radius:4px;
     font-variant-numeric:tabular-nums;font-weight:600;
   }
   .timer-dot{width:6px;height:6px;border-radius:50%;background:var(--terracota-2);animation:pulse 1.4s infinite}
@@ -124,13 +124,13 @@
     background:var(--verde);color:#fff;font-weight:700;
     padding:20px 36px;border:none;border-radius:6px;
     font-size:16.5px;letter-spacing:.01em;cursor:pointer;
-    box-shadow:0 6px 0 var(--verde-2),0 12px 32px rgba(47,191,113,.28);
+    box-shadow:0 6px 0 var(--verde-2),0 12px 32px rgba(111,127,94,.28);
     transition:transform .15s ease, box-shadow .15s ease;
     text-decoration:none;font-family:inherit;
     position:relative;overflow:hidden;
   }
-  .cta:hover{transform:translateY(2px);box-shadow:0 4px 0 var(--verde-2),0 8px 22px rgba(47,191,113,.32)}
-  .cta:active{transform:translateY(6px);box-shadow:0 0 0 var(--verde-2),0 4px 12px rgba(47,191,113,.32)}
+  .cta:hover{transform:translateY(2px);box-shadow:0 4px 0 var(--verde-2),0 8px 22px rgba(111,127,94,.32)}
+  .cta:active{transform:translateY(6px);box-shadow:0 0 0 var(--verde-2),0 4px 12px rgba(111,127,94,.32)}
   .cta-arrow{font-size:18px;transition:transform .2s}
   .cta:hover .cta-arrow{transform:translateX(4px)}
   .cta-shine::after{
@@ -149,7 +149,7 @@
   }
   .stack-card{
     position:absolute;background:#fff;border:1px solid var(--linha);
-    border-radius:6px;padding:22px;box-shadow:0 20px 50px rgba(59,31,20,.12);
+    border-radius:6px;padding:22px;box-shadow:0 20px 50px rgba(58,51,48,.12);
   }
   .stack-card.c1{top:0;left:0;right:30%;bottom:30%;background:var(--marrom-escuro);color:var(--bege);transform:rotate(-3deg)}
   .stack-card.c2{top:18%;left:20%;right:8%;bottom:18%;transform:rotate(2.5deg)}
@@ -215,12 +215,12 @@
   }
   .feat:hover{background:var(--marrom-mais-escuro)}
   .feat.highlight{background:var(--terracota);color:#fff}
-  .feat.highlight:hover{background:#B05F33}
+  .feat.highlight:hover{background:#A6655D}
   .feat.highlight h3{color:#fff}
   .feat.highlight .feat-icon{background:rgba(255,255,255,.18);color:#fff}
   .feat-icon{
     width:44px;height:44px;border-radius:50%;
-    background:rgba(196,106,58,.18);color:var(--terracota-2);
+    background:rgba(196,124,115,.18);color:var(--terracota-2);
     display:grid;place-items:center;font-size:18px;
   }
   .feat h3{font-size:19px;line-height:1.25;color:var(--bege)}
@@ -252,7 +252,7 @@
   }
   .diff-visual::before{
     content:"";position:absolute;inset:0;
-    background:radial-gradient(circle at 80% 20%,rgba(196,106,58,.25),transparent 50%);
+    background:radial-gradient(circle at 80% 20%,rgba(196,124,115,.25),transparent 50%);
   }
   .diff-visual > *{position:relative}
   .diff-big{font-family:'Playfair Display',serif;font-size:clamp(48px,6vw,84px);line-height:.95;font-weight:500}
@@ -427,7 +427,7 @@
   }
   .closing::before{
     content:"";position:absolute;inset:0;
-    background:radial-gradient(circle at 50% 0%,rgba(196,106,58,.22),transparent 50%);
+    background:radial-gradient(circle at 50% 0%,rgba(196,124,115,.22),transparent 50%);
   }
   .closing > *{position:relative}
   .closing h2{
@@ -443,7 +443,7 @@
 
   /* FOOTER */
   footer{
-    background:#1B0E08;color:rgba(245,239,231,.6);
+    background:#211E1C;color:rgba(245,239,234,.6);
     padding:40px 24px;text-align:center;font-size:12.5px;line-height:1.7;
   }
   footer a{color:var(--terracota-2);text-decoration:none}
