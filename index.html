@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>800 Ferramentas Terapêuticas Aplicadas em Sessão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bege:#F5EFE7;
+    --bege-2:#EFE6D9;
+    --marrom:#5A2E1C;
+    --marrom-escuro:#3B1F14;
+    --marrom-mais-escuro:#2A1610;
+    --terracota:#C46A3A;
+    --terracota-2:#E08858;
+    --verde:#2FBF71;
+    --verde-2:#26A862;
+    --linha:rgba(90,46,28,0.18);
+    --linha-clara:rgba(245,239,231,0.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--bege);
+    color:var(--marrom);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  .serif{font-family:'Playfair Display',serif}
+  .italic{font-style:italic}
+
+  /* Layout */
+  section{padding:88px 24px;position:relative}
+  .wrap{max-width:1120px;margin:0 auto;position:relative}
+  .narrow{max-width:820px;margin:0 auto}
+
+  .eyebrow{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    font-weight:600;color:var(--terracota);margin-bottom:18px;
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:28px;height:1px;background:var(--terracota)}
+
+  .dobra-num{
+    position:absolute;top:32px;right:24px;
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:400;
+    font-size:14px;color:var(--marrom);opacity:.5;letter-spacing:.15em;
+  }
+  section.dark .dobra-num{color:var(--bege);opacity:.45}
+
+  h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;color:var(--marrom);letter-spacing:-0.01em;text-wrap:balance}
+  h2{font-size:clamp(32px,4.4vw,52px);line-height:1.08;margin-bottom:24px}
+  h3{font-size:22px;line-height:1.25}
+  p{text-wrap:pretty}
+
+  section.dark{background:var(--marrom-escuro);color:var(--bege)}
+  section.dark h1,section.dark h2,section.dark h3{color:var(--bege)}
+  section.dark .eyebrow{color:var(--terracota-2)}
+  section.dark .faq{border-top-color:var(--linha-clara)}
+  section.dark .faq-item{border-bottom-color:var(--linha-clara)}
+  section.dark .faq-q{color:var(--bege)}
+  section.dark .faq-q:hover{color:var(--terracota-2)}
+  section.dark .faq-toggle{border-color:var(--linha-clara);color:var(--bege)}
+  section.dark .faq-a{color:var(--bege);opacity:.78}
+  section.dark .pain-close{border-color:var(--linha-clara)}
+
+  /* Top bar */
+  .topbar{
+    background:var(--marrom-mais-escuro);color:var(--bege);
+    text-align:center;padding:11px 16px;font-size:13px;font-weight:500;
+    letter-spacing:.02em;
+    display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+  }
+  .topbar strong{color:var(--terracota-2);font-weight:600}
+  .topbar .timer{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(245,239,231,.08);padding:4px 10px;border-radius:4px;
+    font-variant-numeric:tabular-nums;font-weight:600;
+  }
+  .timer-dot{width:6px;height:6px;border-radius:50%;background:var(--terracota-2);animation:pulse 1.4s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+  /* HERO */
+  .hero{
+    background:var(--bege);
+    padding:64px 24px 96px;
+    border-bottom:1px solid var(--linha);
+    position:relative;overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;
+    max-width:1180px;margin:0 auto;
+  }
+  .hero h1{
+    font-size:clamp(36px,5.2vw,64px);line-height:1.04;font-weight:600;
+    letter-spacing:-0.015em;margin-bottom:24px;
+  }
+  .hero h1 em{color:var(--terracota);font-style:italic;font-weight:500}
+  .hero .sub{
+    font-size:18px;color:var(--marrom);opacity:.85;line-height:1.6;
+    margin-bottom:32px;max-width:560px;
+  }
+  .proof-mini{
+    display:flex;flex-direction:column;gap:10px;margin-bottom:36px;
+    padding:20px 22px;background:rgba(255,255,255,.5);
+    border:1px solid var(--linha);border-radius:6px;
+  }
+  .proof-mini .row{display:flex;align-items:center;gap:12px;font-size:14.5px;font-weight:500}
+  .check{
+    flex-shrink:0;width:18px;height:18px;border-radius:50%;
+    background:var(--verde);color:#fff;display:grid;place-items:center;
+    font-size:11px;font-weight:700;
+  }
+
+  /* CTA */
+  .cta{
+    display:inline-flex;align-items:center;justify-content:center;gap:12px;
+    background:var(--verde);color:#fff;font-weight:700;
+    padding:20px 36px;border:none;border-radius:6px;
+    font-size:16.5px;letter-spacing:.01em;cursor:pointer;
+    box-shadow:0 6px 0 var(--verde-2),0 12px 32px rgba(47,191,113,.28);
+    transition:transform .15s ease, box-shadow .15s ease;
+    text-decoration:none;font-family:inherit;
+    position:relative;overflow:hidden;
+  }
+  .cta:hover{transform:translateY(2px);box-shadow:0 4px 0 var(--verde-2),0 8px 22px rgba(47,191,113,.32)}
+  .cta:active{transform:translateY(6px);box-shadow:0 0 0 var(--verde-2),0 4px 12px rgba(47,191,113,.32)}
+  .cta-arrow{font-size:18px;transition:transform .2s}
+  .cta:hover .cta-arrow{transform:translateX(4px)}
+  .cta-shine::after{
+    content:"";position:absolute;top:0;left:-100%;width:60%;height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+    animation:shine 3.2s infinite;
+  }
+  @keyframes shine{0%{left:-100%}40%,100%{left:120%}}
+
+  .cta-sub{margin-top:14px;font-size:13.5px;color:var(--marrom);opacity:.7;display:flex;align-items:center;gap:8px}
+  .cta-sub .dot{width:5px;height:5px;border-radius:50%;background:var(--verde)}
+
+  /* Hero stack illustration */
+  .hero-visual{
+    position:relative;aspect-ratio:4/5;width:100%;
+  }
+  .stack-card{
+    position:absolute;background:#fff;border:1px solid var(--linha);
+    border-radius:6px;padding:22px;box-shadow:0 20px 50px rgba(59,31,20,.12);
+  }
+  .stack-card.c1{top:0;left:0;right:30%;bottom:30%;background:var(--marrom-escuro);color:var(--bege);transform:rotate(-3deg)}
+  .stack-card.c2{top:18%;left:20%;right:8%;bottom:18%;transform:rotate(2.5deg)}
+  .stack-card.c3{top:36%;left:8%;right:24%;bottom:0;background:var(--terracota);color:#fff;transform:rotate(-1deg)}
+  .stack-card .label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.7;margin-bottom:10px}
+  .stack-card .title{font-family:'Playfair Display',serif;font-size:22px;line-height:1.2;font-weight:600;margin-bottom:14px}
+  .stack-card ul{list-style:none;font-size:13px;line-height:1.9;opacity:.9}
+  .stack-card ul li::before{content:"— ";opacity:.6}
+  .stack-num{
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:400;
+    font-size:64px;line-height:1;letter-spacing:-0.02em;
+  }
+
+  /* DOR (dobra 2) */
+  .pain-list{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    border-top:1px solid var(--linha-clara);
+  }
+  .pain-list .item{
+    padding:24px 28px 24px 0;border-bottom:1px solid var(--linha-clara);
+    display:flex;align-items:flex-start;gap:18px;font-size:18px;font-weight:400;
+  }
+  .pain-list .item:nth-child(odd){padding-right:28px;border-right:1px solid var(--linha-clara)}
+  .pain-list .item:nth-child(even){padding-left:28px}
+  .pain-num{
+    font-family:'Playfair Display',serif;font-style:italic;color:var(--terracota-2);
+    font-size:20px;flex-shrink:0;width:28px;
+  }
+  .pain-close{
+    margin-top:48px;padding:32px;border:1px solid var(--linha-clara);
+    border-left:3px solid var(--terracota-2);
+    font-size:19px;line-height:1.55;
+  }
+  .pain-close strong{color:var(--terracota-2);font-weight:600}
+
+  /* MECANISMO */
+  .pillars{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    margin-top:48px;border-top:1px solid var(--linha);
+  }
+  .pillar{
+    padding:32px 24px;border-bottom:1px solid var(--linha);
+    border-right:1px solid var(--linha);
+  }
+  .pillar:nth-child(4n){border-right:none}
+  .pillar .tag{
+    font-family:'Playfair Display',serif;font-style:italic;font-size:18px;
+    color:var(--terracota);margin-bottom:14px;
+  }
+  .pillar h3{font-size:17px;line-height:1.3;margin-bottom:6px}
+  .pillar p{font-size:13.5px;opacity:.75}
+
+  /* PRODUTO (cards) */
+  .feature-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--linha-clara);border:1px solid var(--linha-clara);
+    margin-top:56px;
+  }
+  .feat{
+    background:var(--marrom-escuro);padding:36px 30px;
+    display:flex;flex-direction:column;gap:14px;min-height:240px;
+    transition:background .25s ease;
+  }
+  .feat:hover{background:var(--marrom-mais-escuro)}
+  .feat.highlight{background:var(--terracota);color:#fff}
+  .feat.highlight:hover{background:#B05F33}
+  .feat.highlight h3{color:#fff}
+  .feat.highlight .feat-icon{background:rgba(255,255,255,.18);color:#fff}
+  .feat-icon{
+    width:44px;height:44px;border-radius:50%;
+    background:rgba(196,106,58,.18);color:var(--terracota-2);
+    display:grid;place-items:center;font-size:18px;
+  }
+  .feat h3{font-size:19px;line-height:1.25;color:var(--bege)}
+  .feat p{font-size:14px;line-height:1.55;opacity:.78}
+  .feat .feat-num{
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:13px;opacity:.5;margin-top:auto;letter-spacing:.1em;
+  }
+
+  /* DIFERENCIAL */
+  .diff-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
+  }
+  .diff-pills{display:flex;flex-direction:column;gap:14px;margin-top:28px}
+  .diff-pill{
+    display:flex;align-items:center;gap:16px;
+    padding:18px 22px;background:rgba(255,255,255,.55);
+    border:1px solid var(--linha);border-radius:6px;
+    font-size:17px;font-weight:500;
+  }
+  .diff-pill .num{
+    font-family:'Playfair Display',serif;font-style:italic;
+    color:var(--terracota);font-size:24px;line-height:1;width:36px;
+  }
+  .diff-visual{
+    aspect-ratio:1;background:var(--marrom-escuro);color:var(--bege);
+    padding:48px;display:flex;flex-direction:column;justify-content:space-between;
+    border-radius:6px;position:relative;overflow:hidden;
+  }
+  .diff-visual::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 80% 20%,rgba(196,106,58,.25),transparent 50%);
+  }
+  .diff-visual > *{position:relative}
+  .diff-big{font-family:'Playfair Display',serif;font-size:clamp(48px,6vw,84px);line-height:.95;font-weight:500}
+  .diff-big em{font-style:italic;color:var(--terracota-2)}
+  .diff-meta{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.6}
+
+  /* BÔNUS */
+  .bonus-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;
+  }
+  .bonus{
+    background:var(--bege);color:var(--marrom);padding:32px;
+    border:1px solid var(--linha);border-radius:6px;position:relative;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .bonus-tag{
+    position:absolute;top:-12px;left:24px;
+    background:var(--terracota);color:#fff;
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    padding:6px 12px;border-radius:3px;font-weight:700;
+  }
+  .bonus h3{font-size:21px;line-height:1.2}
+  .bonus p{font-size:14.5px;opacity:.78}
+  .bonus-value{
+    font-family:'Playfair Display',serif;font-style:italic;
+    color:var(--terracota);font-size:14px;margin-top:auto;
+    padding-top:14px;border-top:1px dashed var(--linha);
+  }
+
+  /* TRANSFORMAÇÃO */
+  .trans-list{
+    display:flex;flex-direction:column;margin-top:40px;
+    border-top:1px solid var(--linha);
+  }
+  .trans-item{
+    display:grid;grid-template-columns:80px 1fr auto;gap:24px;
+    align-items:center;padding:28px 0;border-bottom:1px solid var(--linha);
+    transition:padding-left .25s ease;
+  }
+  .trans-item:hover{padding-left:16px;background:rgba(255,255,255,.3)}
+  .trans-item .num{
+    font-family:'Playfair Display',serif;font-style:italic;
+    color:var(--terracota);font-size:32px;line-height:1;
+  }
+  .trans-item h3{font-size:22px;line-height:1.25;color:var(--marrom)}
+  .trans-item .arrow{
+    font-size:18px;color:var(--marrom);opacity:.4;
+    transition:transform .25s ease,opacity .25s;
+  }
+  .trans-item:hover .arrow{transform:translateX(8px);opacity:1;color:var(--terracota)}
+
+  /* AUTORIDADE */
+  .auth-grid{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+    background:var(--linha-clara);margin-top:48px;
+    border:1px solid var(--linha-clara);
+  }
+  .auth{
+    background:var(--marrom-escuro);padding:36px 16px;
+    display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;
+    transition:background .25s;
+  }
+  .auth:hover{background:var(--marrom-mais-escuro)}
+  .auth-mark{
+    width:64px;height:64px;border:1.5px solid var(--terracota-2);
+    border-radius:50%;display:grid;place-items:center;
+    font-family:'Playfair Display',serif;font-style:italic;font-size:22px;
+    color:var(--terracota-2);
+  }
+  .auth h3{font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--bege);text-transform:uppercase}
+  .auth p{font-size:12px;opacity:.65;line-height:1.4}
+
+  /* ENTREGA */
+  .deliver{
+    display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;
+    border:1px solid var(--linha);background:rgba(255,255,255,.5);
+    border-radius:6px;overflow:hidden;
+  }
+  .deliver-col{padding:40px}
+  .deliver-col + .deliver-col{border-left:1px solid var(--linha);background:var(--marrom-escuro);color:var(--bege)}
+  .deliver-col + .deliver-col h3{color:var(--bege)}
+  .deliver-col h3{font-size:14px;letter-spacing:.18em;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:700;margin-bottom:24px;color:var(--terracota)}
+  .deliver-col + .deliver-col h3{color:var(--terracota-2)}
+  .deliver-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .deliver-list li{display:flex;align-items:flex-start;gap:14px;font-size:16px;line-height:1.4}
+  .deliver-list li .ck{
+    width:22px;height:22px;border-radius:50%;background:var(--verde);color:#fff;
+    display:grid;place-items:center;font-size:12px;flex-shrink:0;font-weight:700;
+  }
+  .deliver-stat{
+    font-family:'Playfair Display',serif;font-size:64px;line-height:1;
+    font-weight:600;margin-bottom:10px;
+  }
+  .deliver-stat em{color:var(--terracota-2);font-style:italic}
+
+  /* OFERTA */
+  .offer{
+    max-width:680px;margin:0 auto;text-align:center;
+    background:var(--bege);color:var(--marrom);
+    border:1px solid var(--terracota);border-radius:8px;
+    padding:56px 40px;position:relative;
+    box-shadow:0 30px 60px rgba(0,0,0,.3);
+  }
+  .offer-stamp{
+    position:absolute;top:-18px;left:50%;transform:translateX(-50%);
+    background:var(--terracota);color:#fff;
+    padding:8px 18px;border-radius:4px;
+    font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;
+  }
+  .offer-line{
+    text-decoration:line-through;color:var(--marrom);opacity:.5;
+    font-size:18px;margin-bottom:8px;
+  }
+  .offer-from{font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--terracota);font-weight:700;margin-bottom:16px}
+  .offer-price{
+    font-family:'Playfair Display',serif;font-weight:600;
+    font-size:clamp(72px,10vw,124px);line-height:1;letter-spacing:-0.02em;
+    color:var(--marrom);margin:8px 0 6px;
+  }
+  .offer-price .currency{font-size:.4em;vertical-align:top;margin-right:6px}
+  .offer-price .cents{font-size:.35em;vertical-align:top}
+  .offer-meta{font-size:14.5px;opacity:.7;margin-bottom:32px}
+  .offer-urgency{
+    margin-top:28px;display:flex;flex-direction:column;gap:8px;
+    font-size:13.5px;color:var(--marrom);opacity:.75;
+  }
+
+  /* GARANTIA */
+  .warranty{
+    display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:center;
+    background:var(--bege-2);border:1px solid var(--linha);border-radius:8px;
+    padding:40px;
+  }
+  .seal{
+    width:200px;height:200px;border-radius:50%;
+    background:var(--marrom-escuro);color:var(--bege);
+    display:grid;place-items:center;text-align:center;padding:24px;
+    border:6px double var(--terracota-2);position:relative;
+  }
+  .seal-num{font-family:'Playfair Display',serif;font-size:60px;line-height:1;color:var(--terracota-2);font-weight:600}
+  .seal-text{font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-top:6px;opacity:.85}
+  .warranty h3{font-size:28px;margin-bottom:12px}
+  .warranty p{font-size:16px;line-height:1.6;opacity:.85}
+
+  /* FAQ */
+  .faq{margin-top:48px;border-top:1px solid var(--linha)}
+  .faq-item{border-bottom:1px solid var(--linha);}
+  .faq-q{
+    width:100%;background:none;border:none;text-align:left;
+    padding:24px 0;cursor:pointer;font-family:inherit;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+    font-size:18px;font-weight:500;color:var(--marrom);
+    transition:color .2s;
+  }
+  .faq-q:hover{color:var(--terracota)}
+  .faq-toggle{
+    width:32px;height:32px;flex-shrink:0;border:1px solid var(--linha);border-radius:50%;
+    display:grid;place-items:center;font-size:16px;color:var(--marrom);
+    transition:transform .3s,background .2s,color .2s;
+  }
+  .faq-item.open .faq-toggle{transform:rotate(45deg);background:var(--terracota);color:#fff;border-color:var(--terracota)}
+  .faq-a{
+    max-height:0;overflow:hidden;transition:max-height .35s ease;
+    font-size:15.5px;line-height:1.6;color:var(--marrom);opacity:.8;
+  }
+  .faq-a-inner{padding:0 0 24px;max-width:780px}
+
+  /* FECHAMENTO */
+  .closing{
+    text-align:center;padding:120px 24px;background:var(--marrom-mais-escuro);
+    color:var(--bege);position:relative;overflow:hidden;
+  }
+  .closing::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 0%,rgba(196,106,58,.22),transparent 50%);
+  }
+  .closing > *{position:relative}
+  .closing h2{
+    font-size:clamp(34px,5vw,60px);line-height:1.12;color:var(--bege);
+    margin-bottom:48px;max-width:820px;margin-left:auto;margin-right:auto;
+  }
+  .closing h2 em{color:var(--terracota-2);font-style:italic}
+  .closing .or{
+    display:block;font-size:14px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--terracota-2);margin:18px 0;font-family:'Inter',sans-serif;
+    font-style:normal;font-weight:600;
+  }
+
+  /* FOOTER */
+  footer{
+    background:#1B0E08;color:rgba(245,239,231,.6);
+    padding:40px 24px;text-align:center;font-size:12.5px;line-height:1.7;
+  }
+  footer a{color:var(--terracota-2);text-decoration:none}
+  footer .legal{max-width:680px;margin:0 auto 14px;opacity:.7}
+
+  /* Sticky CTA mobile */
+  .sticky-cta{
+    position:fixed;bottom:0;left:0;right:0;z-index:50;
+    background:var(--marrom-mais-escuro);padding:12px 16px;
+    display:none;align-items:center;justify-content:space-between;gap:12px;
+    box-shadow:0 -10px 30px rgba(0,0,0,.3);
+  }
+  .sticky-cta .price{color:var(--bege);font-size:13px}
+  .sticky-cta .price strong{font-family:'Playfair Display',serif;font-size:22px;color:#fff;display:block}
+  .sticky-cta .cta{padding:14px 20px;font-size:14px;box-shadow:0 4px 0 var(--verde-2)}
+
+  /* Scroll progress */
+  .progress{
+    position:fixed;top:0;left:0;height:3px;background:var(--terracota);
+    z-index:100;width:0%;transition:width .1s;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width:900px){
+    section{padding:64px 20px}
+    .hero{padding:48px 20px 72px}
+    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .hero-visual{max-width:380px;margin:0 auto}
+    .pain-list{grid-template-columns:1fr}
+    .pain-list .item{padding:20px 0!important;border-right:none!important;border-left:none!important}
+    .pillars{grid-template-columns:1fr 1fr}
+    .pillar:nth-child(4n){border-right:1px solid var(--linha)}
+    .pillar:nth-child(2n){border-right:none}
+    .feature-grid{grid-template-columns:1fr 1fr}
+    .diff-grid{grid-template-columns:1fr;gap:40px}
+    .diff-visual{aspect-ratio:auto;padding:36px}
+    .bonus-grid{grid-template-columns:1fr;gap:32px}
+    .auth-grid{grid-template-columns:repeat(2,1fr)}
+    .deliver{grid-template-columns:1fr}
+    .deliver-col + .deliver-col{border-left:none;border-top:1px solid var(--linha)}
+    .warranty{grid-template-columns:1fr;text-align:center;padding:32px 24px}
+    .seal{margin:0 auto;width:160px;height:160px}
+    .seal-num{font-size:48px}
+    .trans-item{grid-template-columns:50px 1fr;gap:16px;padding:22px 0}
+    .trans-item .arrow{display:none}
+    .trans-item .num{font-size:24px}
+    .trans-item h3{font-size:18px}
+    .offer{padding:48px 24px}
+    .closing{padding:80px 20px}
+    .sticky-cta{display:flex}
+    .topbar{font-size:11.5px;padding:9px 12px;gap:8px}
+    body{padding-bottom:78px}
+  }
+  @media (max-width:520px){
+    .pillars{grid-template-columns:1fr}
+    .pillar{border-right:none!important}
+    .feature-grid{grid-template-columns:1fr}
+    .auth-grid{grid-template-columns:1fr}
+    .hero h1{font-size:34px}
+    .stack-card .title{font-size:18px}
+    .stack-num{font-size:48px}
+  }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span><strong>⚠ Oferta por tempo limitado</strong> — Acesso imediato após pagamento</span>
+  <span class="timer"><span class="timer-dot"></span><span id="timer">23:59:47</span></span>
+</div>
+
+<!-- DOBRA 1 — HERO -->
+<section class="hero" id="topo">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">Para psicólogos e terapeutas</span>
+      <h1>Pacientes que <em>não evoluem</em>, excesso de trabalho e insegurança nas sessões?</h1>
+      <p class="sub">Baixe agora <strong>800 ferramentas terapêuticas prontas</strong>, organizadas por tipo de paciente e com fluxos de sessão para transformar seus atendimentos na prática — sem precisar criar nada do zero.</p>
+
+      <div class="proof-mini">
+        <div class="row"><span class="check">✓</span> Baseado em TCC, TDC, Mindfulness e Terapia Narrativa</div>
+        <div class="row"><span class="check">✓</span> Aplicação imediata em sessão</div>
+        <div class="row"><span class="check">✓</span> Economize até 5 horas por semana</div>
+      </div>
+
+      <a href="#oferta" class="cta cta-shine">Quero acessar agora as 800 ferramentas <span class="cta-arrow">→</span></a>
+      <div class="cta-sub"><span class="dot"></span> Acesso imediato + bônus inclusos</div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="stack-card c1">
+        <div class="label">Módulo 01</div>
+        <div class="title">Diagnóstico Profundo</div>
+        <ul>
+          <li>Mapeamento de crenças</li>
+          <li>Identificação de gatilhos</li>
+          <li>Padrões de repetição</li>
+        </ul>
+      </div>
+      <div class="stack-card c2">
+        <div class="label" style="color:var(--terracota)">Fluxos de sessão</div>
+        <div class="title" style="color:var(--marrom)">800 ferramentas organizadas</div>
+        <div class="stack-num" style="color:var(--terracota)">800</div>
+        <div class="label" style="margin-top:8px;color:var(--marrom);opacity:.6">Por tipo de paciente</div>
+      </div>
+      <div class="stack-card c3">
+        <div class="label">Aplicação prática</div>
+        <div class="title">O que usar, quando, e como conduzir</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 2 — DOR -->
+<section class="dark">
+  <div class="dobra-num">02 — Conexão</div>
+  <div class="narrow">
+    <span class="eyebrow">Se você é terapeuta…</span>
+    <h2>…provavelmente já passou por isso.</h2>
+
+    <div class="pain-list">
+      <div class="item"><span class="pain-num">i.</span><span>Sessões que parecem não sair do lugar</span></div>
+      <div class="item"><span class="pain-num">ii.</span><span>Pacientes que não se abrem ou não evoluem</span></div>
+      <div class="item"><span class="pain-num">iii.</span><span>Sensação de que você poderia fazer mais</span></div>
+      <div class="item"><span class="pain-num">iv.</span><span>Falta de tempo para preparar atendimentos</span></div>
+      <div class="item"><span class="pain-num">v.</span><span>Dúvida sobre qual abordagem usar em cada caso</span></div>
+      <div class="item"><span class="pain-num">vi.</span><span>Cansaço acumulado e perda de confiança clínica</span></div>
+    </div>
+
+    <div class="pain-close">
+      E o pior… isso <strong>não acontece por falta de conhecimento</strong>. Acontece por falta de <strong>estrutura prática na hora da sessão</strong>.
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 3 — MECANISMO -->
+<section>
+  <div class="dobra-num">03 — A virada</div>
+  <div class="wrap">
+    <span class="eyebrow">A virada</span>
+    <h2>Mais importante do que ter ferramentas… é saber <em style="color:var(--terracota);font-style:italic">exatamente como usar</em>.</h2>
+    <p style="font-size:17.5px;max-width:780px;opacity:.85;line-height:1.65">Foi pensando nisso que criamos um sistema com <strong>800 ferramentas terapêuticas</strong> organizadas por tipo de paciente e situação clínica, baseadas em abordagens reconhecidas. Tudo traduzido em aplicação prática — pronto para usar em sessão.</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="tag">i.</div>
+        <h3>Terapia Cognitivo-Comportamental</h3>
+        <p>TCC — reestruturação de pensamentos e comportamentos</p>
+      </div>
+      <div class="pillar">
+        <div class="tag">ii.</div>
+        <h3>Terapia Dialética Comportamental</h3>
+        <p>TDC — regulação emocional e tolerância ao mal-estar</p>
+      </div>
+      <div class="pillar">
+        <div class="tag">iii.</div>
+        <h3>Mindfulness baseado em TC</h3>
+        <p>MBCT — atenção plena aplicada à clínica</p>
+      </div>
+      <div class="pillar">
+        <div class="tag">iv.</div>
+        <h3>Terapia Narrativa</h3>
+        <p>Ressignificação de história e identidade</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 4 — PRODUTO -->
+<section class="dark">
+  <div class="dobra-num">04 — O sistema</div>
+  <div class="wrap">
+    <span class="eyebrow">O que você vai encontrar</span>
+    <h2>9 frentes clínicas resolvidas em <em style="color:var(--terracota-2);font-style:italic">um único sistema</em>.</h2>
+    <p style="font-size:17px;max-width:680px;opacity:.8">Cada bloco entrega ferramentas prontas, fluxos passo a passo e exemplos de aplicação real em sessão.</p>
+
+    <div class="feature-grid">
+      <div class="feat">
+        <div class="feat-icon">◎</div>
+        <h3>Diagnóstico Profundo</h3>
+        <p>Entenda rapidamente padrões, crenças e gatilhos do paciente.</p>
+        <div class="feat-num">— 01</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">◇</div>
+        <h3>Desbloqueio de Pacientes Travados</h3>
+        <p>Ferramentas para quando o paciente não se abre.</p>
+        <div class="feat-num">— 02</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">↻</div>
+        <h3>Evolução de Pacientes Estagnados</h3>
+        <p>Técnicas para sair de ciclos repetitivos.</p>
+        <div class="feat-num">— 03</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">≈</div>
+        <h3>Regulação Emocional</h3>
+        <p>Ansiedade, crises e controle emocional.</p>
+        <div class="feat-num">— 04</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">◈</div>
+        <h3>Reestruturação Cognitiva</h3>
+        <p>Trabalhe pensamentos e crenças limitantes.</p>
+        <div class="feat-num">— 05</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">△</div>
+        <h3>Traumas e Emoções Profundas</h3>
+        <p>Processamento e ressignificação clínica.</p>
+        <div class="feat-num">— 06</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">◉</div>
+        <h3>Autoestima e Identidade</h3>
+        <p>Reconstrução emocional e autovalor.</p>
+        <div class="feat-num">— 07</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">↗</div>
+        <h3>Planejamento Terapêutico</h3>
+        <p>Leve o paciente para ação prática.</p>
+        <div class="feat-num">— 08</div>
+      </div>
+      <div class="feat highlight">
+        <div class="feat-icon">★</div>
+        <h3>Fluxos Prontos de Sessão</h3>
+        <p>O diferencial: saiba exatamente como conduzir cada sessão do início ao fim.</p>
+        <div class="feat-num" style="opacity:.85">— 09 · diferencial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 5 — DIFERENCIAL -->
+<section>
+  <div class="dobra-num">05 — Diferencial</div>
+  <div class="wrap">
+    <div class="diff-grid">
+      <div>
+        <span class="eyebrow">Não é só um kit</span>
+        <h2>Isso não é só um kit de ferramentas.</h2>
+        <p style="font-size:17px;opacity:.85;line-height:1.6">Você não recebe apenas materiais. Você recebe um <strong>sistema</strong> que te mostra o caminho — mesmo com pacientes difíceis, travados ou sem evolução.</p>
+        <div class="diff-pills">
+          <div class="diff-pill"><span class="num">i.</span><span><strong>O que</strong> usar em cada caso clínico</span></div>
+          <div class="diff-pill"><span class="num">ii.</span><span><strong>Quando</strong> aplicar cada ferramenta</span></div>
+          <div class="diff-pill"><span class="num">iii.</span><span><strong>Como</strong> conduzir do início ao fim</span></div>
+        </div>
+      </div>
+      <div class="diff-visual">
+        <div class="diff-meta">Sistema · não apenas kit</div>
+        <div>
+          <div class="diff-big">O que.<br/><em>Quando.</em><br/>Como.</div>
+        </div>
+        <div class="diff-meta">3 perguntas. 1 sistema.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 6 — BÔNUS -->
+<section class="dark">
+  <div class="dobra-num">06 — Bônus</div>
+  <div class="wrap">
+    <span class="eyebrow">Comprando hoje</span>
+    <h2>Você ainda recebe <em style="color:var(--terracota-2);font-style:italic">3 bônus exclusivos</em>.</h2>
+
+    <div class="bonus-grid">
+      <div class="bonus">
+        <span class="bonus-tag">Bônus 01</span>
+        <h3>Protocolo de Sessões Terapêuticas Estruturadas</h3>
+        <p>Nunca mais trave na condução de uma sessão. Tenha um roteiro para cada situação clínica.</p>
+        <div class="bonus-value">— Valor: R$ 97</div>
+      </div>
+      <div class="bonus">
+        <span class="bonus-tag">Bônus 02</span>
+        <h3>Mapa Rápido de Decisão Clínica</h3>
+        <p>Saiba em segundos qual ferramenta usar com base no que o paciente apresenta na sessão.</p>
+        <div class="bonus-value">— Valor: R$ 67</div>
+      </div>
+      <div class="bonus">
+        <span class="bonus-tag">Bônus 03</span>
+        <h3>Plano de Atendimento Rápido</h3>
+        <p>Prepare sessões em minutos, mesmo com agenda cheia. Modelo pronto para preencher.</p>
+        <div class="bonus-value">— Valor: R$ 47</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 7 — TRANSFORMAÇÃO -->
+<section>
+  <div class="dobra-num">07 — Transformação</div>
+  <div class="wrap">
+    <span class="eyebrow">O que muda na sua prática</span>
+    <h2>Depois de usar o sistema, você vai…</h2>
+
+    <div class="trans-list">
+      <div class="trans-item"><span class="num">01</span><h3>Economizar horas por semana na preparação de sessões</h3><span class="arrow">→</span></div>
+      <div class="trans-item"><span class="num">02</span><h3>Conduzir sessões com mais segurança e clareza</h3><span class="arrow">→</span></div>
+      <div class="trans-item"><span class="num">03</span><h3>Engajar até pacientes difíceis e resistentes</h3><span class="arrow">→</span></div>
+      <div class="trans-item"><span class="num">04</span><h3>Ter resultados clínicos visíveis mais rápido</h3><span class="arrow">→</span></div>
+      <div class="trans-item"><span class="num">05</span><h3>Trabalhar com mais confiança em cada atendimento</h3><span class="arrow">→</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 8 — AUTORIDADE -->
+<section class="dark">
+  <div class="dobra-num">08 — Embasamento</div>
+  <div class="wrap">
+    <span class="eyebrow">Embasamento clínico</span>
+    <h2>Desenvolvido com base em <em style="color:var(--terracota-2);font-style:italic">abordagens validadas</em>.</h2>
+
+    <div class="auth-grid">
+      <div class="auth"><div class="auth-mark">TCC</div><h3>Cognitivo-Comportamental</h3><p>Beck · Ellis</p></div>
+      <div class="auth"><div class="auth-mark">TDC</div><h3>Dialética Comportamental</h3><p>Marsha Linehan</p></div>
+      <div class="auth"><div class="auth-mark">MBCT</div><h3>Mindfulness</h3><p>Kabat-Zinn · Segal</p></div>
+      <div class="auth"><div class="auth-mark">TN</div><h3>Terapia Narrativa</h3><p>White · Epston</p></div>
+      <div class="auth"><div class="auth-mark">RE</div><h3>Reprocessamento Emocional</h3><p>Aplicado em clínica</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 9 — ENTREGA -->
+<section>
+  <div class="dobra-num">09 — Entrega</div>
+  <div class="wrap">
+    <span class="eyebrow">Você recebe hoje</span>
+    <h2>Tudo o que entra na sua biblioteca clínica.</h2>
+
+    <div class="deliver">
+      <div class="deliver-col">
+        <h3>O que está incluso</h3>
+        <ul class="deliver-list">
+          <li><span class="ck">✓</span> 800 ferramentas terapêuticas prontas</li>
+          <li><span class="ck">✓</span> Sistema organizado por situação clínica</li>
+          <li><span class="ck">✓</span> Fluxos completos de sessão (passo a passo)</li>
+          <li><span class="ck">✓</span> 3 bônus exclusivos</li>
+          <li><span class="ck">✓</span> Acesso imediato após pagamento</li>
+          <li><span class="ck">✓</span> Atualizações inclusas</li>
+        </ul>
+      </div>
+      <div class="deliver-col">
+        <h3>Em números</h3>
+        <div class="deliver-stat">800<em>+</em></div>
+        <p style="opacity:.8;font-size:15px;margin-bottom:24px">ferramentas terapêuticas catalogadas</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:16px">
+          <div>
+            <div class="deliver-stat" style="font-size:36px">9</div>
+            <p style="opacity:.7;font-size:13px">frentes clínicas</p>
+          </div>
+          <div>
+            <div class="deliver-stat" style="font-size:36px">4</div>
+            <p style="opacity:.7;font-size:13px">abordagens base</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 10 — OFERTA -->
+<section class="dark" id="oferta">
+  <div class="dobra-num">10 — Oferta</div>
+  <div class="wrap" style="text-align:center">
+    <span class="eyebrow" style="margin:0 auto 18px;justify-content:center">A oferta de hoje</span>
+    <h2 style="max-width:760px;margin-left:auto;margin-right:auto">Tudo isso poderia facilmente custar mais de <em style="text-decoration:line-through;opacity:.7;font-style:normal;color:var(--bege)">R$ 297</em>.</h2>
+    <p style="font-size:17px;opacity:.8;max-width:600px;margin:0 auto 40px">Mas hoje, no lançamento, você tem acesso completo por uma fração disso.</p>
+
+    <div class="offer">
+      <span class="offer-stamp">Acesso completo</span>
+      <div class="offer-line">De R$ 297,00</div>
+      <div class="offer-from">Por apenas</div>
+      <div class="offer-price"><span class="currency">R$</span>14<span class="cents">,90</span></div>
+      <div class="offer-meta">Pagamento único · acesso vitalício</div>
+
+      <a href="#" class="cta cta-shine" style="margin-top:8px">Quero acessar agora <span class="cta-arrow">→</span></a>
+
+      <div class="offer-urgency">
+        <div>⚠ Oferta por tempo limitado</div>
+        <div>⚡ Acesso liberado imediatamente após o pagamento</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 11 — GARANTIA -->
+<section>
+  <div class="dobra-num">11 — Garantia</div>
+  <div class="wrap">
+    <div class="warranty">
+      <div class="seal">
+        <div>
+          <div class="seal-num">7</div>
+          <div class="seal-text">Dias de garantia</div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">Risco zero</span>
+        <h3>Garantia incondicional de 7 dias.</h3>
+        <p>Acesse o material, teste em sessão, aplique nos seus pacientes. Se em qualquer momento dentro de 7 dias você sentir que não é útil para sua prática clínica, basta enviar um e-mail e devolvemos 100% do valor — sem perguntas, sem burocracia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOBRA 12 — FAQ -->
+<section class="dark">
+  <div class="dobra-num">12 — Dúvidas</div>
+  <div class="narrow">
+    <span class="eyebrow">Perguntas frequentes</span>
+    <h2>Perguntas que você pode estar fazendo.</h2>
+
+    <div class="faq" id="faq">
+      <div class="faq-item">
+        <button class="faq-q">Funciona para terapeutas iniciantes?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. O sistema foi pensado justamente para reduzir a insegurança clínica — os fluxos prontos guiam você passo a passo, então mesmo no início de carreira você consegue conduzir sessões com estrutura.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Preciso de formação específica em alguma abordagem?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Não. As ferramentas são apresentadas em linguagem clínica acessível, com exemplos de aplicação. Se você é psicólogo ou terapeuta formado, consegue aplicar imediatamente, independente da sua linha base.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Como recebo o material após a compra?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">O acesso é liberado <strong>imediatamente após a confirmação do pagamento</strong>. Você recebe um e-mail com login para a área de membros e pode começar a usar no mesmo dia.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">O conteúdo é atualizado?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. Sempre que adicionamos novas ferramentas, fluxos ou materiais ao sistema, você recebe automaticamente — sem custo adicional.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Funciona em atendimento online?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. Todas as ferramentas e fluxos foram pensados para serem aplicados tanto presencialmente quanto em atendimento online.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Posso pedir reembolso se não gostar?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. Você tem 7 dias de garantia incondicional. Se não for útil para sua prática, basta solicitar e devolvemos 100% do valor.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FECHAMENTO FINAL -->
+<section class="closing">
+  <div class="dobra-num" style="color:var(--bege);opacity:.4">— Decisão</div>
+  <h2>Você pode continuar <em>improvisando</em> em cada sessão…<span class="or">— ou —</span>ter um sistema pronto que te guia em cada atendimento.</h2>
+  <a href="#oferta" class="cta cta-shine">Quero ter mais segurança nas minhas sessões <span class="cta-arrow">→</span></a>
+  <div style="margin-top:18px;font-size:13px;color:var(--terracota-2);opacity:.85">Acesso imediato · garantia de 7 dias · pagamento único</div>
+</section>
+
+<footer>
+  <div class="legal">
+    Este produto é destinado a profissionais de saúde mental (psicólogos, terapeutas e estudantes em formação supervisionada). Não substitui formação clínica, supervisão profissional ou conduta ética determinada pelos conselhos de classe.
+  </div>
+  <div>© 2026 · 800 Ferramentas Terapêuticas · <a href="#">Termos</a> · <a href="#">Privacidade</a> · <a href="#">Contato</a></div>
+</footer>
+
+<!-- Sticky CTA mobile -->
+<div class="sticky-cta">
+  <div class="price">Acesso completo<strong>R$ 14,90</strong></div>
+  <a href="#oferta" class="cta">Quero agora →</a>
+</div>
+
+<script>
+  // Scroll progress
+  const progress = document.getElementById('progress');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    progress.style.width = pct + '%';
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const ans = item.querySelector('.faq-a');
+      const isOpen = item.classList.contains('open');
+      // close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = '0';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Countdown timer (decorative — resets each session)
+  const timerEl = document.getElementById('timer');
+  let total = 23 * 3600 + 59 * 60 + 47;
+  function tick(){
+    total = Math.max(0, total - 1);
+    const h = String(Math.floor(total/3600)).padStart(2,'0');
+    const m = String(Math.floor((total%3600)/60)).padStart(2,'0');
+    const s = String(total%60).padStart(2,'0');
+    timerEl.textContent = `${h}:${m}:${s}`;
+  }
+  setInterval(tick, 1000);
+</script>
+
+</body>
+</html>
