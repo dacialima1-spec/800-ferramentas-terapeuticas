@@ -225,6 +225,16 @@
   }
   .feat h3{font-size:19px;line-height:1.25;color:var(--bege)}
   .feat p{font-size:14px;line-height:1.55;opacity:.78}
+  .feat-topics{
+    list-style:none;padding:0;margin:6px 0 0;
+    display:flex;flex-direction:column;gap:8px;
+    font-size:13.5px;line-height:1.45;opacity:.88;
+  }
+  .feat-topics li{
+    display:flex;gap:8px;align-items:flex-start;
+    color:var(--bege);
+  }
+  .feat.highlight .feat-topics li{color:#fff}
   .feat .feat-num{
     font-family:'Playfair Display',serif;font-style:italic;
     font-size:13px;opacity:.5;margin-top:auto;letter-spacing:.1em;
@@ -276,6 +286,17 @@
   }
   .bonus h3{font-size:21px;line-height:1.2}
   .bonus p{font-size:14.5px;opacity:.78}
+  .bonus-title{
+    font-family:'Playfair Display',serif;font-weight:600;
+    font-size:16px;line-height:1.3;color:var(--terracota);
+    margin:6px 0 -2px;
+  }
+  .bonus-topics{
+    list-style:none;padding:0;margin:4px 0 0;
+    display:flex;flex-direction:column;gap:8px;
+    font-size:14px;line-height:1.45;color:var(--marrom);
+  }
+  .bonus-topics li{display:flex;gap:8px;align-items:flex-start}
   .bonus-value{
     font-family:'Playfair Display',serif;font-style:italic;
     color:var(--terracota);font-size:14px;margin-top:auto;
@@ -525,7 +546,7 @@
   <div class="narrow">
     <span class="eyebrow">Para psicólogos e terapeutas</span>
     <h1>Pacientes que <em>não evoluem</em>, excesso de trabalho e insegurança nas sessões?</h1>
-    <p class="sub">Baixe agora <strong>800 ferramentas terapêuticas prontas</strong>, organizadas por tipo de paciente e com fluxos de sessão para transformar seus atendimentos na prática — sem precisar criar nada do zero.</p>
+    <p class="sub">Acesse e baixe agora <strong>800 ferramentas terapêuticas prontas</strong>, organizadas por tipo de paciente e com fluxos de sessão para transformar seus atendimentos na prática, sem precisar criar nada do zero.</p>
 
     <img src="https://res.cloudinary.com/drm2vtmrt/image/upload/v1777745818/Untitled_design_-_2026-05-02T151639.010_pnqtxm.png" alt="800 Ferramentas Terapêuticas" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;display:block;margin:32px 0">
 
@@ -609,6 +630,13 @@
         <div class="feat-icon">◎</div>
         <h3>Diagnóstico Profundo</h3>
         <p>Entenda rapidamente padrões, crenças e gatilhos do paciente.</p>
+        <ul class="feat-topics">
+          <li>📄 Planner de Anamnese Emocional Completa</li>
+          <li>📊 Checklist de Padrões Comportamentais</li>
+          <li>🧠 Avaliação de Crenças Limitantes</li>
+          <li>🔎 Mapa de Gatilhos Emocionais</li>
+          <li>📝 Roteiro Pronto para Primeira Sessão</li>
+        </ul>
         <div class="feat-num">— 01</div>
       </div>
       <div class="feat">
@@ -616,6 +644,12 @@
         <div class="feat-icon">◇</div>
         <h3>Desbloqueio de Pacientes Travados</h3>
         <p>Ferramentas para quando o paciente não se abre.</p>
+        <ul class="feat-topics">
+          <li>💬 120 Perguntas de Desbloqueio Emocional</li>
+          <li>🧩 Roteiros para Pacientes Travados</li>
+          <li>✍️ Exercícios de Expressão Emocional Guiada</li>
+          <li>🤝 Técnicas Práticas de Rapport Terapêutico</li>
+        </ul>
         <div class="feat-num">— 02</div>
       </div>
       <div class="feat">
@@ -623,6 +657,12 @@
         <div class="feat-icon">↻</div>
         <h3>Evolução de Pacientes Estagnados</h3>
         <p>Técnicas para sair de ciclos repetitivos.</p>
+        <ul class="feat-topics">
+          <li>🔄 80 Técnicas de Quebra de Padrão</li>
+          <li>🧠 Exercícios de Consciência Emocional</li>
+          <li>📄 Roteiros para Sessões Estagnadas</li>
+          <li>🎯 Intervenções para destravar progresso</li>
+        </ul>
         <div class="feat-num">— 03</div>
       </div>
       <div class="feat">
@@ -630,6 +670,12 @@
         <div class="feat-icon">≈</div>
         <h3>Regulação Emocional</h3>
         <p>Ansiedade, crises e controle emocional.</p>
+        <ul class="feat-topics">
+          <li>📘 Diário da Ansiedade Profunda</li>
+          <li>🌬️ Exercícios de Respiração Guiada</li>
+          <li>⚡ Técnicas para Crises Emocionais</li>
+          <li>🌍 Práticas de Grounding Imediato</li>
+        </ul>
         <div class="feat-num">— 04</div>
       </div>
       <div class="feat">
@@ -637,6 +683,12 @@
         <div class="feat-icon">◈</div>
         <h3>Reestruturação Cognitiva</h3>
         <p>Trabalhe pensamentos e crenças limitantes.</p>
+        <ul class="feat-topics">
+          <li>📓 Diário de Pensamentos Automáticos</li>
+          <li>📊 Planilha de Reestruturação Cognitiva</li>
+          <li>🔁 Exercícios de Substituição de Crenças</li>
+          <li>🧠 Modelos de Questionamento Cognitivo</li>
+        </ul>
         <div class="feat-num">— 05</div>
       </div>
       <div class="feat">
@@ -644,6 +696,12 @@
         <div class="feat-icon">△</div>
         <h3>Traumas e Emoções Profundas</h3>
         <p>Processamento e ressignificação clínica.</p>
+        <ul class="feat-topics">
+          <li>📘 Guia de Processamento Emocional</li>
+          <li>✍️ Exercícios de Escrita Terapêutica Profunda</li>
+          <li>🔄 Técnicas de Ressignificação Emocional</li>
+          <li>🧠 Protocolos para Liberação de Emoções</li>
+        </ul>
         <div class="feat-num">— 06</div>
       </div>
       <div class="feat">
@@ -651,6 +709,12 @@
         <div class="feat-icon">◉</div>
         <h3>Autoestima e Identidade</h3>
         <p>Reconstrução emocional e autovalor.</p>
+        <ul class="feat-topics">
+          <li>🪞 Diário de Reconstrução da Autoimagem</li>
+          <li>💬 Exercícios de Autovalorização</li>
+          <li>📄 Guias de Fortalecimento de Identidade</li>
+          <li>🧠 Técnicas de Reforço Positivo</li>
+        </ul>
         <div class="feat-num">— 07</div>
       </div>
       <div class="feat">
@@ -658,6 +722,12 @@
         <div class="feat-icon">↗</div>
         <h3>Planejamento Terapêutico</h3>
         <p>Leve o paciente para ação prática.</p>
+        <ul class="feat-topics">
+          <li>📅 Plano de Ação Terapêutico</li>
+          <li>✅ Checklist Semanal de Evolução</li>
+          <li>📊 Rastreador de Progresso Emocional</li>
+          <li>🎯 Rotinas de Aplicação Prática</li>
+        </ul>
         <div class="feat-num">— 08</div>
       </div>
       <div class="feat highlight">
@@ -665,6 +735,13 @@
         <div class="feat-icon">★</div>
         <h3>Fluxos Prontos de Sessão</h3>
         <p>O diferencial: saiba exatamente como conduzir cada sessão do início ao fim.</p>
+        <ul class="feat-topics">
+          <li>🧠 50 Roteiros Prontos de Sessões Terapêuticas</li>
+          <li>📍 Estrutura Completa de Primeira Sessão</li>
+          <li>🔓 Sessão Pronta para Paciente Travado</li>
+          <li>⚡ Sessões para Ansiedade, Crises e Trauma</li>
+          <li>🎯 Modelos de Encerramento de Sessão</li>
+        </ul>
         <div class="feat-num" style="opacity:.85">— 09 · diferencial</div>
       </div>
     </div>
@@ -710,6 +787,12 @@
         <span class="bonus-tag">Bônus 01</span>
         <h3>Protocolo de Sessões Terapêuticas Estruturadas</h3>
         <p>Nunca mais trave na condução de uma sessão. Tenha um roteiro para cada situação clínica.</p>
+        <div class="bonus-title">Protocolo Completo de Condução de Sessões Terapêuticas</div>
+        <ul class="bonus-topics">
+          <li>📘 Guia passo a passo da sessão</li>
+          <li>📍 Estrutura: abertura → diagnóstico → intervenção → fechamento</li>
+          <li>🎯 Modelos prontos de condução</li>
+        </ul>
         <div class="bonus-value">— Valor: R$ 97</div>
       </div>
       <div class="bonus">
@@ -717,6 +800,12 @@
         <span class="bonus-tag">Bônus 02</span>
         <h3>Mapa Rápido de Decisão Clínica</h3>
         <p>Saiba em segundos qual ferramenta usar com base no que o paciente apresenta na sessão.</p>
+        <div class="bonus-title">Mapa Rápido de Decisão Clínica</div>
+        <ul class="bonus-topics">
+          <li>📊 Tabela visual de decisão</li>
+          <li>🔍 Situação → ferramenta ideal</li>
+          <li>⚡ Uso rápido durante sessão</li>
+        </ul>
         <div class="bonus-value">— Valor: R$ 67</div>
       </div>
       <div class="bonus">
@@ -724,6 +813,12 @@
         <span class="bonus-tag">Bônus 03</span>
         <h3>Plano de Atendimento Rápido</h3>
         <p>Prepare sessões em minutos, mesmo com agenda cheia. Modelo pronto para preencher.</p>
+        <div class="bonus-title">Plano de Atendimento Rápido</div>
+        <ul class="bonus-topics">
+          <li>📅 Templates de preparação de sessão</li>
+          <li>⚡ Modelos de atendimento semanal</li>
+          <li>🧠 Estrutura para reduzir tempo</li>
+        </ul>
         <div class="bonus-value">— Valor: R$ 47</div>
       </div>
     </div>
